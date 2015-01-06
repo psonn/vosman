@@ -14,6 +14,7 @@ gem 'coffee-rails', '~> 4.0.0'
 # gem 'therubyracer',  platforms: :ruby
 
 gem 'devise'
+gem 'paperclip', github: 'thoughtbot/paperclip'
 
 group :development, :test do
 	gem 'sqlite3'
