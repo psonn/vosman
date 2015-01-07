@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   root "pins#index"
   get 'users' => 'users#index'
 
+  get 'contact' => 'contacts#new'
+  resources "contacts", only: [:new, :create]
+
   get 'tags/:tag', to: 'pins#index', as: :tag
 
   # The priority is based upon order of creation: first created -> highest priority.

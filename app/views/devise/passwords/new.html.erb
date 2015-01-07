@@ -9,8 +9,13 @@
       <%= devise_error_messages! %>
 
       <div class="form-group">
-        <%= f.label :email %>
-        <%= f.email_field :email, class: "form-control", :autofocus => true %>
+        <%= f.label :login %>
+        <div class="input-group">
+          <span class="input-group-addon" id="basic-addon1">
+            <i class="glyphicon glyphicon-user"></i>
+          </span>
+          <%= f.text_field :login, class: "form-control", :autofocus => true, placeholder: "Username or email" %>
+        </div>
       </div>
 
       <div class="form-group">

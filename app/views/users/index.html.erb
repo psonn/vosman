@@ -10,7 +10,7 @@
     <th>Email</th>
     <th>Lid sinds</th>
     <th>Aantal logins</th>
-    <th>Huidig IP-adres</th>
+    <th>Laatste IP-adres</th>
   </tr>
   </thead>
   <% @users.each do |user| %>
@@ -21,7 +21,7 @@
       <td><%= user.email %></td>
       <td><%= user.created_at.strftime("%d/%m/%Y") %></td>
       <td><%= user.sign_in_count %></td>
-      <td><%= user.current_sign_in_ip %></td>
+      <td><%= user.last_sign_in_ip %></td>
     </tr>
   </tbody>
   <% end %>

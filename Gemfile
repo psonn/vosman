@@ -20,9 +20,11 @@ gem 'masonry-rails'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
 gem 'acts-as-taggable-on'
+gem 'mail_form'
 
 group :development, :test do
 	gem 'sqlite3'
+	gem 'foreman'
 end
 
 group :production do

@@ -8,13 +8,21 @@
     <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
 
       <div class="form-group">
-        <%= f.label :email %>
-        <%= f.email_field :email, class: "form-control", :autofocus => true %>
+        <div class="input-group">
+          <span class="input-group-addon" id="basic-addon1">
+            <i class="glyphicon glyphicon-user"></i>
+          </span>
+          <%= f.text_field :login, class: "form-control", :autofocus => true, placeholder: "Username or email" %>
+        </div>
       </div>
 
       <div class="form-group">
-        <%= f.label :password %>
-        <%= f.password_field :password, class: "form-control" %>
+        <div class="input-group">
+          <span class="input-group-addon" id="basic-addon1">
+            <i class="glyphicon glyphicon-lock"></i>
+          </span>
+        <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
+        </div>
       </div>
 
       <div class="form-group">
