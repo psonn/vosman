@@ -9,6 +9,12 @@
               </div>
       <div class="panel-body">
         <p><%= @pin.description %></p>
+        <% @pin.tags.any? %>
+          <% @pin.tags.each do |tag| %>
+            <span class="label label-primary">
+              <%= link_to tag.name, tag_path(tag.name) %>
+            </span>  
+          <% end %><br>
         <p><strong><%= @pin.user.username if @pin.user %></strong></p>
 
         <% if current_user && @pin.user == current_user %>
