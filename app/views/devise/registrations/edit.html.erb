@@ -9,8 +9,23 @@
       <%= devise_error_messages! %>
 
       <div class="form-group">
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name, class: "form-control", :autofocus => true %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :username %>
+        <%= f.text_field :username, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
         <%= f.label :email %>
-        <%= f.email_field :email, class: "form-control", :autofocus => true %>
+        <%= f.email_field :email, class: "form-control"%>
       </div>
 
       <div class="form-group">
@@ -24,7 +39,7 @@
       </div>
 
       <div class="form-group">
-        <%= f.submit "Update", class: "btn btn-primary" %>
+        <%= f.button "Update user", class: "btn btn-primary", data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Updating user..."} %>
       </div>
     <% end %>
   </div>
