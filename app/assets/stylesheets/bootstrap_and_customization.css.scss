@@ -11,12 +11,40 @@ $jumbotron-bg:               white;
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+body {
+	background: url('ineke.jpg') top center fixed;
+	background-repeat: no-repeat;
+	background-size: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
 .center {
      text-align: center;
 }
 
 .navbar-brand {
      font-weight: bold;
+}
+
+.radio,
+.checkbox {
+  margin-left: 20px;
+}
+
+.radio label,
+.checkbox label {
+  padding-left: 0px;
+}
+
+.hidden { 
+	display: none; 
+}
+
+.panel-body {
+	margin: 15px;
 }
 
 /*flash*/
@@ -47,4 +75,35 @@ background-color: #dff0d8;
 border-color: #d6e9c6;
 color: #468847;
 text-align: left;
+}
+
+/* footer */
+
+footer {
+  margin: 45px auto;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #999;
+}
+
+footer a {
+  color: #555;
+}  
+
+footer a:hover { 
+  color: #222;
+}
+
+footer small {
+  float: left;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 10px;
 }
