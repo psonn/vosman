@@ -1,20 +1,8 @@
-// Place all the styles related to the pins controller here.
+// Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-#pins {
-  margin: 0 auto;
-}
 
-.box {
-  margin: 5px;
-  width: 280px;
-}
-
-.box img {
-  width: 100%;
-}
-
-.index, .show {
+.new, .create {
 	background: url('ineke.jpg') top center fixed;
 	background-repeat: no-repeat;
 	background-size: 100%;

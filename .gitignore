@@ -18,3 +18,4 @@
 /public/system/*
 .env
 Procfile
+/public/ckeditor_assets/*

@@ -19,8 +19,10 @@
               <%= link_to tag.name, tag_path(tag.name) %>
             </span>  
           <% end %><br>
-        <strong><%= pin.user.username if pin.user %></strong><br>
+        <strong><%= pin.user.username if pin.user %></strong>
+      </div>
         <% if current_user && pin.user == current_user %>
+      <div class="panel-footer">
           <div class="actions">
             <%= link_to edit_pin_path(pin) do %>
               <span class="glyphicon glyphicon-edit"></span>
@@ -31,8 +33,8 @@
               Delete
             <% end %>
           </div>
-        <% end %>
       </div>
+        <% end %>
     </div>
   <% end %>
 </div>

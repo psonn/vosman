@@ -11,16 +11,6 @@ $jumbotron-bg:               white;
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-body {
-	background: url('ineke.jpg') top center fixed;
-	background-repeat: no-repeat;
-	background-size: 100%;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-
 .center {
      text-align: center;
 }

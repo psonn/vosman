@@ -1,4 +1,6 @@
 class ContactsController < ApplicationController
+  layout "front"
+
   def new
     @contact = Contact.new
   end
