@@ -2,6 +2,7 @@ class PinsController < ApplicationController
   before_action :set_pin, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
   before_action :correct_user, only: [:edit, :update, :destroy]
+  
   def index
     if params[:tag].present? 
       @pins = Pin.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 8)
