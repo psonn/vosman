@@ -29,6 +29,10 @@
     <%= f.text_area :description, class: "form-control" %>
   </div>
   <div class="form-group">
+    <%= f.label :tags, "Tags (separated by commas)" %>
+    <%= f.text_field :tag_list, class: "form-control" %>
+  </div>
+  <div class="form-group">
     <%= f.button "Save pin", class: "btn btn-primary", data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Saving pin..."} %>
   </div>
 <% end %>

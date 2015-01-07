@@ -1,4 +1,5 @@
-<%= render 'pages/home' unless user_signed_in? %>
+<% provide(:title, 'Home') %>
+<%= render 'pages/home' unless user_signed_in? or params[:tag].present?  %>
 
 <div id="pins" class="transitions-enabled">
   <% @pins.each do |pin| %>
@@ -12,6 +13,12 @@
         <%= truncate(pin.summary, length: 200, separator: ' ') %><br/>
         <%= link_to 'Lees meer', pin_path(pin) %>
         </p>
+        <% pin.tags.any? %>
+          <% pin.tags.each do |tag| %>
+            <span class="label label-primary">
+              <%= link_to tag.name, tag_path(tag.name) %>
+            </span>  
+          <% end %>
         <strong><%= pin.user.username if pin.user %></strong><br>
         <% if current_user && pin.user == current_user %>
           <div class="actions">
