@@ -1,10 +1,9 @@
 <div class="row">
-  <div class="col-md-offset-2 col-md-8">
     <div class="panel panel-default">
       <div class="panel-heading">
             <h2><%= @pin.title %></h2>
 <div class="center">
-        <%= image_tag @pin.image.url(:medium).to_s, class: "img-responsive" %>
+        <%= image_tag @pin.image.url(:show).to_s, class: "img-responsive" %>
             </div>
               </div>
       <div class="panel-body">
@@ -27,5 +26,4 @@
         <%= link_to "Back", pins_path %>
       </div>
     </div>
-  </div>
 </div>
