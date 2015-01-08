@@ -16,6 +16,11 @@
     <%= f.text_field :title, class: "form-control", autofocus: true %>
   </div>
   <div class="form-group">
+    <%= f.label :image %>
+    <%= image_tag @blog.image.url(:medium) if @blog.image? %><br>
+    <%= f.file_field :image, class: "form-control" %>
+  </div>
+  <div class="form-group">
     <%= f.label :body %><br>
     <%= f.cktext_area :body, class: "form-control" %>
   </div>
