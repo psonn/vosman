@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :pins, dependent: :destroy
+  has_many :blogs
 
   validates :first_name, presence: true
   validates :last_name, presence: true

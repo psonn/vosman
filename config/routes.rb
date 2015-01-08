@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'paginas' => 'blogs#index'
+
   mount Ckeditor::Engine => '/ckeditor'
   get 'users/index'
 
@@ -10,6 +12,9 @@ Rails.application.routes.draw do
 
   get 'contact' => 'contacts#new'
   resources "contacts", only: [:new, :create]
+
+  resources :blogs , :path => '', :only => [:show, :update, :destroy]
+  resources :blogs
 
   get 'tags/:tag', to: 'pins#index', as: :tag
 

@@ -1,0 +1,22 @@
+<% provide(:title, @blog.title) %>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <div class="panel-title">
+      <h1><%= @blog.title %></h1>
+    </div>
+  </div>
+  <div class="panel-body">
+
+	<p>
+	  <%= (@blog.body).html_safe %>
+	</p>
+
+  </div>  
+  <div class="panel-footer">
+  	<% if current_user && @blog.user == current_user %>
+  	<%= link_to 'Edit', edit_blog_path(@blog) %> |
+  	<%= link_to 'Back', paginas_path %>
+  	<% end %>
+  </div>
+</div>

@@ -1,0 +1,57 @@
+<% provide(:title, "Pagina's") %>
+
+<div class="panel panel-default">
+  <div class="panel-heading"><h1>Pagina's (<%= @blogs.count %>)</h1></div>
+  <div class="panel-body">
+    <% if user_signed_in? %>
+    <%= link_to("Nieuw artikel", [:new, :blog], :class => 'btn btn-primary') %>
+    <% end %>
+  </div>
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th>Titel</th>
+    <th>Auteur</th>
+    <th></th>
+  </tr>
+  </thead>
+  <% @blogs.each do |blog| %>
+  <tbody>
+    <tr>
+      <td><%= blog.title %></td>
+      <td><%= blog.user.username if blog.user %></td>
+      <td>
+        <div class="btn-group">
+  <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+    Opties <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <%= link_to blog_path(blog) do %>
+        <span class="glyphicon glyphicon-eye-open"></span> Toon pagina
+      <% end %>
+      </li>    
+    <li>
+      <%= link_to edit_blog_path(blog) do %>
+        <span class="glyphicon glyphicon-edit"></span> Bewerk pagina
+      <% end %>
+      </li>
+    <li class="divider"></li>
+    <li>
+      <%= link_to blog, method: :delete, data: { confirm: 'Are you sure?' } do %>
+        <span class="glyphicon glyphicon-trash"></span> Verwijder pagina
+      <% end %>
+    </li>
+  </ul>
+</div>
+      </td>
+    </tr>
+  </tbody>
+  <% end %>
+  </table>
+  <div class="panel-footer">
+    <div class="center">
+      <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
+    </div>
+  </div>
+</div>
