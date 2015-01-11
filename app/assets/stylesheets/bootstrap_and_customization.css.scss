@@ -87,15 +87,16 @@ footer {
   margin: 45px auto;
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
-  color: #999;
+  color: #fff;
 }
 
 footer a {
-  color: #555;
+  color: #fff;
 }  
 
 footer a:hover { 
-  color: #222;
+  color: #fff;
+  text-decoration: underline;
 }
 
 footer small {
