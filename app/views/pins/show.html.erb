@@ -13,9 +13,9 @@
             <span class="label label-primary">
               <%= link_to tag.name, tag_path(tag.name) %>
             </span>  
-          <% end %><br>
-        <p><strong><%= @pin.user.username if @pin.user %></strong></p>
+          <% end %>
       </div>
+          <p class="placed-at">Geplaatst op <%= @pin.created_at.strftime("%d/%m/%Y") %> om <%= @pin.created_at.strftime("%H:%M") %></p>
         <div class="panel-footer">
         <% if current_user && @pin.user == current_user %>
           <%= link_to edit_pin_path(@pin) do %>
