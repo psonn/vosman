@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :homes
+
+  resources :contactpaginas
+
   get 'paginas' => 'blogs#index'
 
   mount Ckeditor::Engine => '/ckeditor'
@@ -7,7 +11,7 @@ Rails.application.routes.draw do
   resources :pins
 
   devise_for :users
-  root "pins#index"
+  root "pages#home"
   get 'users' => 'users#index'
 
   get 'contact' => 'contacts#new'

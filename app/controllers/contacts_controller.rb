@@ -2,6 +2,7 @@ class ContactsController < ApplicationController
   layout "front"
 
   def new
+    @contactpaginas = Contactpagina.find(1)
     @contact = Contact.new
   end
 

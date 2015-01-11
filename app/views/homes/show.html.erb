@@ -1,0 +1,22 @@
+<% provide(:title, @home.title) %>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <div class="panel-title">
+      <h1><%= wrap(@home.title) %></h1>
+    </div>
+  </div>
+  <div class="panel-body">
+
+	<p>Geplaatst op <%= @home.created_at.strftime("%d/%m/%Y") %> om <%= @home.created_at.strftime("%H:%M") %></p>
+
+	<p>
+	  <%= (@home.body).html_safe %>
+	</p>
+
+  </div>  
+  <div class="panel-footer">
+  	<%= link_to 'Edit', edit_home_path(@home) %> |
+  	<%= link_to 'Back', homes_path %>
+  </div>
+</div>

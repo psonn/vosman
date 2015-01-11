@@ -1,0 +1,22 @@
+<% provide(:title, @contactpagina.title) %>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <div class="panel-title">
+      <h1><%= wrap(@contactpagina.title) %></h1>
+    </div>
+  </div>
+  <div class="panel-body">
+
+	<p>Geplaatst op <%= @contactpagina.created_at.strftime("%d/%m/%Y") %> om <%= @contactpagina.created_at.strftime("%H:%M") %></p>
+
+	<p>
+	  <%= (@contactpagina.body).html_safe %>
+	</p>
+
+  </div>  
+  <div class="panel-footer">
+  	<%= link_to 'Edit', edit_contactpagina_path(@contactpagina) %> |
+  	<%= link_to 'Back', contactpaginas_path %>
+  </div>
+</div>

@@ -9,4 +9,8 @@ module ApplicationHelper
       "#{base_title} | #{page_title}"
     end
   end
+
+  def back_to(path)
+    link_to("&laquo; Terug".html_safe, path, :class => 'btn btn-default')
+  end
 end
