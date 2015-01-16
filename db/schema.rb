@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150111013602) do
+ActiveRecord::Schema.define(version: 20150116225230) do
 
   create_table "blogs", force: true do |t|
     t.string   "title"
@@ -83,8 +83,10 @@ ActiveRecord::Schema.define(version: 20150111013602) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.text     "summary"
+    t.string   "slug"
   end
 
+  add_index "pins", ["slug"], name: "index_pins_on_slug", unique: true
   add_index "pins", ["user_id"], name: "index_pins_on_user_id"
 
   create_table "taggings", force: true do |t|
