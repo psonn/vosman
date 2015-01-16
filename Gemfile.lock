@@ -70,7 +70,6 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
-    disqus_rails (0.0.6)
     dotenv (1.0.2)
     erubis (2.7.0)
     execjs (2.2.2)
@@ -185,7 +184,6 @@ DEPENDENCIES
   ckeditor
   coffee-rails (~> 4.0.0)
   devise
-  disqus_rails
   foreman
   friendly_id
   jbuilder (~> 2.0)
