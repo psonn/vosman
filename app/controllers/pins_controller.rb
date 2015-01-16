@@ -6,9 +6,9 @@ class PinsController < ApplicationController
 
   def index
     if params[:tag].present? 
-      @pins = Pin.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 8)
+      @pins = Pin.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 6)
     else
-      @pins = Pin.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 8)
+      @pins = Pin.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 6)
     end  
   end
 
