@@ -1,8 +1,7 @@
-<% provide(:title, 'Artikelen') %>
+<% provide(:title, 'Alle pins') %>
 
 <div id="pins" class="transitions-enabled">
   <% @pins.each do |pin| %>
-    <% if pin.published? %>
     <div class="box panel panel-default">
           <div class="panel-heading">
       <h2><%= pin.title %></h2>
@@ -19,6 +18,11 @@
               <%= link_to tag.name, tag_path(tag.name) %>
             </span>  
           <% end %>
+        <% if pin.published? %>
+          <h3><span class="label label-success">Gepubliceerd</span></h3>
+        <% else %>
+          <h3><span class="label label-default">Niet gepubliceerd</span></h3>
+        <% end %>
       </div>
         <% if current_user && pin.user == current_user %>
       <div class="panel-footer">
@@ -35,7 +39,6 @@
       </div>
         <% end %>
     </div>
-    <% end %>
   <% end %>
 </div>
 <div class="center">

@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   root "pages#home"
   get 'users' => 'users#index'
+  get 'allpins' => 'pins#allpins'
 
   get 'contact' => 'contacts#new'
   resources "contacts", only: [:new, :create]

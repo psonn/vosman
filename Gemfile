@@ -23,6 +23,8 @@ gem 'acts-as-taggable-on'
 gem 'mail_form'
 gem 'ckeditor'
 gem 'friendly_id'
+gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'master'
+gem 'devise-i18n'
 
 group :development, :test do
 	gem 'sqlite3'

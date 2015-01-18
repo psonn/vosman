@@ -12,6 +12,10 @@ class PinsController < ApplicationController
     end  
   end
 
+  def allpins
+    @pins = Pin.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 6)  
+  end
+
   def show
   end
 
@@ -57,6 +61,6 @@ class PinsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pin_params
-      params.require(:pin).permit(:description, :image, :title, :summary, :tag_list, :slug)
+      params.require(:pin).permit(:description, :image, :title, :summary, :tag_list, :slug, :published)
     end
 end
