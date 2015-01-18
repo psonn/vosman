@@ -202,3 +202,7 @@ nl:
       long: ! '%d %B %Y %H:%M'
       short: ! '%d %b %H:%M'
     pm: ! '''s middags'
+  will_paginate:
+    previous_label: "&#8592; Vorige"
+    next_label: "Volgende &#8594;"
+    page_gap: "&hellip;"
