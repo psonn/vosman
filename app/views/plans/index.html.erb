@@ -1,0 +1,36 @@
+<div class="jumbotron center">
+<h1>Listing plans</h1>
+
+<%= link_to 'New Plan', new_plan_path, class: "btn btn-success" %>
+
+<div id="pins">
+  <% @plans.each do |plan| %>
+
+    <div class="box panel panel-default">
+          <div class="panel-heading">
+      <h2><%= plan.name %></h2>
+    </div>
+      <div class="panel-body">
+        <li>
+        <%= number_to_currency plan.price %>
+      </li>
+      </div>
+      <div class="signup">
+        <%= link_to "Sign up", new_subscription_path(:plan_id => plan.id), class: "btn btn-success" %>
+      </div>
+      <div class="panel-footer">
+          <div class="actions">
+            <%= link_to edit_plan_path(plan) do %>
+              <span class="glyphicon glyphicon-edit"></span>
+              Edit
+            <% end %> | 
+            <%= link_to plan, method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <span class="glyphicon glyphicon-trash"></span>
+              Delete
+            <% end %>
+          </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+</div>

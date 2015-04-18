@@ -4,6 +4,13 @@ module PinsHelper
     sanitize((content.split.map{ |s| wrap_long_string(s) }.join(' ')).html_safe)
   end
 
+  def split_str(str, len = 10)
+    fragment = /.{#{len}}/
+    str.split(/(\s+)/).map! { |word|
+      (/\s/ === word) ? word : word.gsub(fragment, '\0<wbr />')
+    }.join
+  end
+
   private
 
     def wrap_long_string(text, max_width = 10)

@@ -16,7 +16,12 @@
             </span>  
           <% end %>
       </div>
-          <p class="placed-at">Geplaatst op <%= @pin.created_at.strftime("%d/%m/%Y") %> om <%= @pin.created_at.strftime("%H:%M") %></p>
+          <p class="placed-at">
+            Geplaatst op <%= @pin.created_at.strftime("%d/%m/%Y") %> om <%= @pin.created_at.strftime("%H:%M") %>
+          </p>
+          <div id="share-buttons">
+
+          </div>
         <div class="panel-footer">
         <% if current_user && @pin.user == current_user %>
           <%= link_to edit_pin_path(@pin) do %>

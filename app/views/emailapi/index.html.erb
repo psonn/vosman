@@ -1,0 +1,17 @@
+<% provide(:title, 'Nieuwsbrief') %>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <div class="panel-title">
+    	<h1>Nieuwsbrief</h1>
+    </div>
+  </div>
+  <div class="panel-body">
+  <p>Schrijf u hier in voor mijn nieuwsbrief. Vul onder uw e-mailadres in en ontvang de nieuwsbrief wekelijks in uw inbox!</p>
+
+    <%= form_tag('/emailapi/subscribe', method: "post", id: "subscribe", remote: "true") do %>
+   <%= email_field(:email, :address, {id: "email", placeholder: "e-mailadres"}) %>
+   <%= submit_tag("Inschrijven") %>
+<% end %>
+  </div>  
+</div>

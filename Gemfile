@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-ruby '2.0.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
@@ -25,6 +24,7 @@ gem 'ckeditor'
 gem 'friendly_id'
 gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'master'
 gem 'devise-i18n'
+gem 'gibbon'
 
 group :development, :test do
 	gem 'sqlite3'

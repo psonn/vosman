@@ -1,0 +1,29 @@
+<div class="jumbotron center">
+<h1>Signing up for "<%= @subscription.plan.name %>"</h1>
+<p>Includes a <strong>Skype consult</strong> for only <strong><%= number_to_currency @subscription.plan.price %></strong> per month!</p>
+
+<%= link_to "Terug", plans_path, class: "btn btn-danger" %>
+
+<%= form_for @subscription do |f| %>
+  <% if @subscription.errors.any? %>
+    <div class="error_messages">
+      <h2><%= pluralize(@subscription.errors.count, "error") %> prohibited this subscription from being saved:</h2>
+      <ul>
+      <% @subscription.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.hidden_field :plan_id %>
+
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Subscribe", class: "btn btn-danger" %>
+  </div>
+<% end %>
+</div>

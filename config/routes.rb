@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :subscriptions
+
+  resources :plans
+
   resources :homes
 
   resources :contactpaginas
@@ -23,6 +27,9 @@ Rails.application.routes.draw do
   resources :blogs
 
   get 'tags/:tag', to: 'pins#index', as: :tag
+
+  get 'email/nieuwsbrief' => 'emailapi#index'
+  post 'emailapi/subscribe' => 'emailapi#subscribe'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
