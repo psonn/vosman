@@ -26,6 +26,7 @@ gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'master'
 gem 'devise-i18n'
 gem 'gibbon'
 gem 'nested_form_fields'
+gem 'nprogress-rails'
 
 group :development, :test do
 	gem 'sqlite3'

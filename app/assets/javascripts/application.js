@@ -18,4 +18,10 @@
 //= require masonry/jquery.masonry
 //= require ckeditor/init
 //= require nested_form_fields
+//= require nprogress
+//= require nprogress-turbolinks
 //= require_tree .
+
+$(document).ready(function() {
+  NProgress.start();
+});

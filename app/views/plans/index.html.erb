@@ -15,6 +15,7 @@
       <h1><%= number_to_currency plan.price %></h1>
       <% if plan.normal_price.present? %>
       <h3><S>Normale prijs: <%= number_to_currency plan.normal_price %></S></h3>
+      <h5 class="help-block">Incl. BTW</h5>
       <% end %>
     </div>
     <table class="table table-hover">
