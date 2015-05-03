@@ -30,16 +30,14 @@
              <div class="col-xs-4">
        <%= ff.text_field :content, class: "form-control" %>
      </div>
-       <%= ff.remove_nested_fields_link 'Remove me', class: 'btn btn-danger', role: 'button' %>
+       <%= ff.remove_nested_fields_link 'Verwijder detail', class: 'btn btn-danger', role: 'button' %>
      </div> 
    <% end %>
    <div class="form-group">
-   <%= f.add_nested_fields_link :details, 'Add another detail', class: 'btn btn-info', role: 'button' %>
+   <%= f.add_nested_fields_link :details, 'Voeg detail toe', class: 'btn btn-info', role: 'button' %>
  </div>
 
-
-
   <div class="form-group">
-    <%= f.button "Save plan", class: "btn btn-primary", data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Saving plan..."} %>
+    <%= f.button "Bewaar product", class: "btn btn-primary", data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Saving plan..."} %>
   </div>
 <% end %>

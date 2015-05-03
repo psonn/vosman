@@ -1,8 +1,10 @@
+<% provide(:title, 'Producten') %>
+
 <div class="jumbotron center">
 <h1>Producten</h1>
 
 <% if user_signed_in? %>
-<%= link_to 'New Plan', new_plan_path, class: "btn btn-lg btn-success" %>
+<%= link_to 'Nieuw product', new_plan_path, class: "btn btn-lg btn-success" %>
 <% end %>
 <div id="pins">
   <% @plans.each do |plan| %>
@@ -26,7 +28,7 @@
     </table>
       <div class="panel-footer">
         <div class="signup">
-          <%= link_to "Sign up", new_subscription_path(:plan_id => plan.id), class: "btn btn-success btn-lg" %>
+          <%= link_to "Koop", new_subscription_path(:plan_id => plan.id), class: "btn btn-success btn-lg btn-block" %>
         </div>
       <% if user_signed_in? %>
       <br />
