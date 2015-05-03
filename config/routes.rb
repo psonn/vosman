@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :plan_details
+  resources :details
 
   resources :subscriptions
 

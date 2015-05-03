@@ -1,8 +1,20 @@
 <div class="jumbotron center">
-<h1>Signing up for "<%= @subscription.plan.name %>"</h1>
-<p>Includes a <strong>Skype consult</strong> for only <strong><%= number_to_currency @subscription.plan.price %></strong> per month!</p>
-
-<%= link_to "Terug", plans_path, class: "btn btn-danger" %>
+<h1>Inschrijving voor:</h1>
+    <center>
+    <div class="box panel panel-primary">
+      <div class="panel-heading">
+            <h2><%= @subscription.plan.name %></h2>
+      </div>
+      <div class="panel-body">
+        <% @subscription.plan.details.each do |detail| %>
+        <p><%= detail.content %></p>
+        <% end %>
+      </div>
+              <div class="panel-footer">
+        <p><strong><%= number_to_currency @subscription.plan.price %></strong></p>
+      </div>
+    </div>
+    <center><br>
 
 <%= form_for @subscription do |f| %>
   <% if @subscription.errors.any? %>
@@ -18,12 +30,13 @@
 
   <%= f.hidden_field :plan_id %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :email %>
-    <%= f.text_field :email %>
+    <%= f.text_field :email, class: "form-control", autofocus: true %>
   </div>
   <div class="actions">
-    <%= f.submit "Subscribe", class: "btn btn-danger" %>
+    <%= f.submit "Bevestig", class: "btn btn-success" %>
+    <%= link_to "Annuleer", plans_path, class: "btn btn-danger" %>
   </div>
 <% end %>
 </div>

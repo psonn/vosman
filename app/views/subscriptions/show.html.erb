@@ -1,6 +1,22 @@
 <div class="jumbotron center">
 <div id="subscription">
-  <h1>Your Subscription</h1>
-  <p>You have signed up for the <strong><%= @subscription.plan.name %></strong> plan which includes a <strong>Maya consult</strong> for just <strong><%= number_to_currency @subscription.plan.price %></strong> per month!</p>
+  <h1>Bevestiging van inschrijving</h1>
+  <p>U hebt u ingeschreven voor een <strong><%= @subscription.plan.name %></strong>. U ontvangt ook een bevestiging in uw inbox.</p>
+  <p>Heeft u niets ontvangen? Controleer dan uw spam-map.</p>
+  <center>
+    <div class="box panel panel-primary">
+      <div class="panel-heading">
+            <h2><%= @subscription.plan.name %></h2>
+      </div>
+      <div class="panel-body">
+        <% @subscription.plan.details.each do |detail| %>
+        <p><%= detail.content %></p>
+        <% end %>
+      </div>
+              <div class="panel-footer">
+        <p><strong><%= number_to_currency @subscription.plan.price %></strong></p>
+      </div>
+    </div>
+    <center>
 </div>
 </div>

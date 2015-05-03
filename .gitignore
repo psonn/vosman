@@ -19,3 +19,4 @@
 .env
 Procfile
 /public/ckeditor_assets/*
+config/secrets.yml
