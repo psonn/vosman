@@ -25,6 +25,7 @@ gem 'friendly_id'
 gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'master'
 gem 'devise-i18n'
 gem 'gibbon'
+gem 'nested_form_fields'
 
 group :development, :test do
 	gem 'sqlite3'

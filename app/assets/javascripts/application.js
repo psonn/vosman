@@ -17,4 +17,5 @@
 //= require turbolinks
 //= require masonry/jquery.masonry
 //= require ckeditor/init
+//= require nested_form_fields
 //= require_tree .

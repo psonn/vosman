@@ -119,6 +119,8 @@ GEM
     minitest (5.5.0)
     multi_json (1.10.1)
     multi_xml (0.5.5)
+    nested_form_fields (0.6.4)
+      rails (>= 3.2.0)
     nokogiri (1.6.5)
       mini_portile (~> 0.6.0)
     orm_adapter (0.5.0)
@@ -210,6 +212,7 @@ DEPENDENCIES
   jquery-turbolinks
   mail_form
   masonry-rails
+  nested_form_fields
   paperclip!
   pg
   rails (= 4.1.4)

@@ -5,7 +5,7 @@
     <% if pin.published? %>
     <div class="box panel panel-default">
           <div class="panel-heading">
-      <h2><%= split_str(pin.title).html_safe %></h2>
+      <h2><%= split_str(pin.title).html_safe%></h2>
     </div>
       <%= link_to image_tag(pin.image.url(:medium)), pin %>
       <div class="panel-body">

@@ -1,4 +1,21 @@
-<p id="notice"><%= notice %></p>
-
-<%= link_to 'Edit', edit_plan_path(@plan) %> |
-<%= link_to 'Back', plans_path %>
+<% provide(:title, @plan.name) %>
+<div class="row">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+            <h2><%= @plan.name %></h2>
+      </div>
+      <div class="panel-body">
+        <p>Prijs: €<%= @plan.price %></p>
+      </div>
+          <p class="placed-at">
+            Geplaatst op <%= @plan.created_at.strftime("%d/%m/%Y") %> om <%= @plan.created_at.strftime("%H:%M") %>
+          </p>
+        <div class="panel-footer">
+          <%= link_to edit_plan_path(@plan) do %>
+            <span class="glyphicon glyphicon-edit"></span>
+            Edit
+          <% end %> | 
+        <%= link_to "Terug", plans_path %>
+      </div>
+    </div>
+</div>

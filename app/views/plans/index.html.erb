@@ -1,24 +1,35 @@
 <div class="jumbotron center">
-<h1>Listing plans</h1>
+<h1>Producten</h1>
 
-<%= link_to 'New Plan', new_plan_path, class: "btn btn-success" %>
-
+<% if user_signed_in? %>
+<%= link_to 'New Plan', new_plan_path, class: "btn btn-lg btn-success" %>
+<% end %>
 <div id="pins">
   <% @plans.each do |plan| %>
 
-    <div class="box panel panel-default">
-          <div class="panel-heading">
+    <div class="box panel panel-primary">
+      <div class="panel-heading">
       <h2><%= plan.name %></h2>
+      <h1><%= number_to_currency plan.price %></h1>
+      <% if plan.normal_price.present? %>
+      <h3><S>Normale prijs: <%= number_to_currency plan.normal_price %></S></h3>
+      <% end %>
     </div>
-      <div class="panel-body">
-        <li>
-        <%= number_to_currency plan.price %>
-      </li>
-      </div>
-      <div class="signup">
-        <%= link_to "Sign up", new_subscription_path(:plan_id => plan.id), class: "btn btn-success" %>
-      </div>
+    <table class="table table-hover">
+  <% plan.details.each do |detail| %>
+  <tbody>
+    <tr>
+      <td><%= detail.content %></td>
+    </tr>
+  </tbody>
+  <% end %>
+    </table>
       <div class="panel-footer">
+        <div class="signup">
+          <%= link_to "Sign up", new_subscription_path(:plan_id => plan.id), class: "btn btn-success btn-lg" %>
+        </div>
+      <% if user_signed_in? %>
+      <br />
           <div class="actions">
             <%= link_to edit_plan_path(plan) do %>
               <span class="glyphicon glyphicon-edit"></span>
@@ -29,6 +40,7 @@
               Delete
             <% end %>
           </div>
+        <% end %>
       </div>
     </div>
   <% end %>

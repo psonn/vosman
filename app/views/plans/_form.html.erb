@@ -16,13 +16,29 @@
     <%= f.text_field :name, class: "form-control", autofocus: true %>
   </div>
   <div class="form-group">
-    <%= f.label :product_type, "Productsoort" %><br>
-    <%= f.select :product_type, options_for_select(%w[Maya Piano Presentatie]), class: "form-control" %>
-  </div>
-  <div class="form-group">
     <%= f.label :price, "Prijs" %>
     <%= f.number_field :price, :class => 'text_field', :step => 'any', class: "form-control" %>
   </div>
+  <div class="form-group">
+    <%= f.label :normal_price, "Normale prijs" %>
+    <%= f.number_field :normal_price, :class => 'text_field', :step => 'any', class: "form-control" %>
+  </div>
+
+   <%= f.nested_fields_for :details do |ff| %>
+     <div class="form-group">
+       <%= ff.label :content, "Detail" %><br />
+             <div class="col-xs-4">
+       <%= ff.text_field :content, class: "form-control" %>
+     </div>
+       <%= ff.remove_nested_fields_link 'Remove me', class: 'btn btn-danger', role: 'button' %>
+     </div> 
+   <% end %>
+   <div class="form-group">
+   <%= f.add_nested_fields_link :details, 'Add another detail', class: 'btn btn-info', role: 'button' %>
+ </div>
+
+
+
   <div class="form-group">
     <%= f.button "Save plan", class: "btn btn-primary", data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Saving plan..."} %>
   </div>

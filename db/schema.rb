@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150201124959) do
+ActiveRecord::Schema.define(version: 20150502155331) do
 
   create_table "blogs", force: true do |t|
     t.string   "title"
@@ -52,6 +52,13 @@ ActiveRecord::Schema.define(version: 20150201124959) do
     t.text     "body"
   end
 
+  create_table "details", force: true do |t|
+    t.integer  "plan_id"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false
     t.integer  "sluggable_id",              null: false
@@ -90,12 +97,20 @@ ActiveRecord::Schema.define(version: 20150201124959) do
   add_index "pins", ["slug"], name: "index_pins_on_slug", unique: true
   add_index "pins", ["user_id"], name: "index_pins_on_user_id"
 
+  create_table "plan_details", force: true do |t|
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "plan_id"
+  end
+
   create_table "plans", force: true do |t|
     t.string   "name"
     t.decimal  "price"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.decimal  "normal_price"
   end
 
   add_index "plans", ["user_id"], name: "index_plans_on_user_id"
