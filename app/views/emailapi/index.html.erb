@@ -10,8 +10,12 @@
   <p>Schrijf u hier in voor mijn nieuwsbrief. Vul onder uw e-mailadres in en ontvang de nieuwsbrief wekelijks in uw inbox!</p>
 
     <%= form_tag('/emailapi/subscribe', method: "post", id: "subscribe", remote: "true") do %>
-   <%= email_field(:email, :address, {id: "email", placeholder: "e-mailadres"}) %>
-   <%= submit_tag("Inschrijven") %>
+    <div class="form-group">
+   <%= email_field(:email, :address, {id: "email", placeholder: "e-mailadres", autofocus: true, class: "form-control"}) %>
+   </div>
+   <%= button_tag(type: "submit", class: "btn btn-success") do %>
+    Bevestig <i class="icon-repeat"></i>
+<% end %>
 <% end %>
   </div>  
 </div>

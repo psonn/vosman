@@ -128,3 +128,9 @@ footer ul li {
 .placed-at {
   margin-left: 30px;
 }
+
+/* Dropdown hover */
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+ }
