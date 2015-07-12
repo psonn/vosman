@@ -1,0 +1,18 @@
+<% provide(:title, @subscriber.id) %>
+<div class="row">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+            Subscriber <h2><%= @subscriber.id %></h2>
+      </div>
+      <div class="panel-body">
+        <p>Email: <%= @subscriber.email %></p>
+      </div>
+        <div class="panel-footer">
+          <%= link_to edit_subscriber_path(@subscriber) do %>
+            <span class="glyphicon glyphicon-edit"></span>
+            Edit
+          <% end %> | 
+        <%= link_to "Terug", subscribers_path %>
+      </div>
+    </div>
+</div>

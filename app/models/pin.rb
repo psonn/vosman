@@ -10,4 +10,12 @@ class Pin < ActiveRecord::Base
     acts_as_taggable
 	extend FriendlyId
 	friendly_id :title, use: :slugged
+
+	has_many :newsletters
+
+	after_create :notify_subscribers
+
+	def notify_subscribers
+		SendNewPinNotificationEmailsJob.perform_later(self)
+	end
 end

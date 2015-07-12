@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.4'
+gem 'rails', '~> 4.2'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 gem 'bootstrap-sass'
@@ -27,12 +27,17 @@ gem 'devise-i18n'
 gem 'gibbon'
 gem 'nested_form_fields'
 gem 'nprogress-rails'
+gem 'mandrill-api'
 
 group :development, :test do
 	gem 'sqlite3'
 	gem 'foreman'
 	gem "better_errors"
 	gem 'binding_of_caller'
+	gem 'dotenv-rails'
+	gem 'web-console', '~> 2.0' 
+	gem "letter_opener"
+	gem 'letter_opener_web', '~> 1.2.0'
 end
 
 group :production do

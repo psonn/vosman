@@ -1,0 +1,31 @@
+<%= form_for(@subscriber) do |f| %>
+<% if @subscriber.errors.any? %>
+  <div id="error_explanation">
+    <div class="alert alert-danger">
+      The form contains <%= pluralize(@subscriber.errors.count, "error") %>.
+    </div>
+    <ul>
+    <% @subscriber.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+  <div class="form-group">
+    <%= f.label :first_name, "Voornaam" %>
+    <%= f.text_field :first_name, class: "form-control", autofocus: true %>
+  </div>
+  <div class="form-group">
+    <%= f.label :last_name, "Achternaam" %>
+    <%= f.text_field :last_name, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :email, "E-mailadres" %>
+    <%= f.email_field :email, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.button "Verstuur", class: "btn btn-primary", data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Bezig met versturen..."} %>
+  </div>
+<% end %>

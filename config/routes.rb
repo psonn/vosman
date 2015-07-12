@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  if Rails.env.development?
+    mount LetterOpenerWeb::Engine, at: "/letter_opener"
+  end
+  
+  resources :subscribers
+
   resources :details
 
   resources :subscriptions
@@ -32,7 +38,6 @@ Rails.application.routes.draw do
 
   get 'email/nieuwsbrief' => 'emailapi#index'
   post 'emailapi/subscribe' => 'emailapi#subscribe'
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
