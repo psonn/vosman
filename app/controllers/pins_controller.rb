@@ -33,6 +33,8 @@ class PinsController < ApplicationController
     else
       render action: 'new'
     end
+#    if @pin.published
+#      @mailer = Publish
   end
 
   def update

@@ -13,9 +13,9 @@ class Pin < ActiveRecord::Base
 
 	has_many :newsletters
 
-	after_create :notify_subscribers
+#	after_create :notify_subscribers
 
-	def notify_subscribers
-		SendNewPinNotificationEmailsJob.perform_later(self)
-	end
+#	def notify_subscribers
+#		SendNewPinNotificationEmailsJob.perform_later(self)
+#	end
 end
