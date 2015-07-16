@@ -14,7 +14,7 @@ gem 'coffee-rails', '~> 4.0.0'
 
 gem 'devise'
 gem 'paperclip', github: 'thoughtbot/paperclip'
-gem 'aws-sdk'
+gem 'aws-sdk', '< 2.0'
 gem 'masonry-rails'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
