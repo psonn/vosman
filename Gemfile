@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby "2.2.4"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 4.2'
@@ -26,7 +27,6 @@ gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'master'
 gem 'devise-i18n'
 gem 'gibbon'
 gem 'nested_form_fields'
-gem 'nprogress-rails'
 gem 'mandrill-api'
 
 group :development, :test do
